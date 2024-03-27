@@ -1,0 +1,30 @@
+.card{
+    background-color: #c5c5c5;
+    border-radius: 15px;
+    padding: 0;
+    overflow: hidden;
+    height: 35vh;
+    min-height: 400px;
+    aspect-ratio: 3/4;
+    margin: 15px;
+    text-align: start;
+}
+
+.card img{
+    width: 100%;
+}
+
+.card-links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-links h3{
+    font-size: 150%;
+}
+
+.card-links a:hover{
+    scale: 1.05;
+    transition: .5s;
+}

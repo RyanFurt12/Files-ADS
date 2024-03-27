@@ -1,0 +1,13 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cards-area                                                    {
+  display: flex;
+  width: 90vw;
+  max-width: 1320px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
