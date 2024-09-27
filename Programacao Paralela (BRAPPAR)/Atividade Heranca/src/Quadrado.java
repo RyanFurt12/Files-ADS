@@ -12,4 +12,13 @@ public class Quadrado extends Bidimensional{
 	public double area(){
 		return this.getComprimento() * this.getLargura();
 	}
+
+	@Override
+    public String toString() {
+        return super.toString() + "\nÁrea: " + this.area();
+    }
+
+	public void print(){
+		System.out.println(this.toString());
+	}
 }

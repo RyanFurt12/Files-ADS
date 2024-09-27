@@ -32,10 +32,12 @@ public abstract class Tridimensional extends Forma{
 		this.altura = altura;
 	}
 
+	public abstract double area();
+	
 	public abstract double volume();
 
 	@Override
 	public String toString(){
-		return super.toString() + ", Largura: " + largura + ", Profundidade: " + profundidade + ", Altura: " + altura;
+		return super.toString() + "\nAltura: " + this.altura + "\nLargura: " + this.largura + "\nProfundidade: " + this.profundidade;
 	}
 }

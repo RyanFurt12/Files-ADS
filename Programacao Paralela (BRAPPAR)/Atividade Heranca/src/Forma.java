@@ -1,5 +1,5 @@
 
-public abstract class Forma{
+public abstract class Forma implements Shape{
 	private String nome;
 	private int dimensao;
 	
@@ -22,6 +22,6 @@ public abstract class Forma{
 	}
 	
 	public String toString(){
-		return "nome: " + this.nome + ", dimensao: " + this.dimensao;
+        return "Forma: " + this.nome + "\nDimensão: " + this.dimensao;
 	};
 }

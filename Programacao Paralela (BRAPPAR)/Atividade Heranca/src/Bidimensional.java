@@ -27,6 +27,6 @@ public abstract class Bidimensional extends Forma{
 
 	@Override
 	public String toString(){
-		return super.toString() + ", Comprimento: " + comprimento + ", Largura: " + largura;
+		return super.toString() + "\nComprimento: " + this.comprimento + "\nLargura: " + this.largura;
 	}
 }
