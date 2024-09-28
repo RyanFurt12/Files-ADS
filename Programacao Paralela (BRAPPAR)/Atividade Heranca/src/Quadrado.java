@@ -21,4 +21,9 @@ public class Quadrado extends Bidimensional{
 	public void print(){
 		System.out.println(this.toString());
 	}
+
+	@Override
+	public double getAltura() {
+		return 0;
+	}
 }

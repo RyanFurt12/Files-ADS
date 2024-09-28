@@ -38,6 +38,6 @@ public abstract class Tridimensional extends Forma{
 
 	@Override
 	public String toString(){
-		return super.toString() + "\nAltura: " + this.altura + "\nLargura: " + this.largura + "\nProfundidade: " + this.profundidade;
+		return super.toString() + "\nLargura: " + this.largura + "\nProfundidade: " + this.profundidade + "\nAltura: " + this.altura;
 	}
 }
