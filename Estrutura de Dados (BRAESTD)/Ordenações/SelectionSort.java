@@ -23,10 +23,14 @@ public class SelectionSort {
             for (int j = i; j < l; j++) {
                 if (vetor[min] > vetor[j]) min = j;
             }
-            int aux = vetor[i];
-            vetor[i] = vetor[min];
-            vetor[min] = aux;
+            changePos(vetor, i, min);
         }
+    }
+
+    public static void changePos(int[] v, int p1, int p2){
+        int aux = v[p1];
+        v[p1] = v[p2];
+        v[p2] = aux;
     }
 
 }

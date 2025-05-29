@@ -17,17 +17,19 @@ public class BubbleSort {
     }
 
     public static void bubbleSort(int[] vetor) {
-        int l = vetor.length;
-        for (int i = l - 1; i >= 0; i--) {
-            for (int j = 0; j < l - 1; j++) {
+        for (int i = vetor.length - 1; i >= 0; i--) {
+            for (int j = 0; j < i; j++) {
                 if (vetor[j] > vetor[j + 1]) {
-                    int aux = vetor[j];
-                    vetor[j] = vetor[j + 1];
-                    vetor[j + 1] = aux;
+                    changePos(vetor, j, j+1);
                 }
-
             }
         }
+    }
+    
+    public static void changePos(int[] v, int p1, int p2){
+        int aux = v[p1];
+        v[p1] = v[p2];
+        v[p2] = aux;
     }
 
 }
