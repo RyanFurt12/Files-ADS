@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class HanoiGame {
     public static void main(String[] args) {
-        Hanoi h = new Hanoi(2);
+        Hanoi h = new Hanoi(5);
         h.startGame();
     }
 }
@@ -50,13 +50,6 @@ class Hanoi {
                 this.printTower();
                 break;
             }
-        }
-    }
-
-    public void printTower() {
-        System.out.println("Move count: " + this.moveCount);
-        for (int i = 0; i < 3; i++) {
-            System.out.println(i + 1 + ": " + Arrays.toString(hanoiTower[i]));
         }
     }
 
@@ -118,4 +111,31 @@ class Hanoi {
         return topIndexes[2] == this.numberOfBlocks - 1;
     }
 
+    public void printTower() {
+        String space = "  ";
+        System.out.println("\nMove count: " + this.moveCount);
+        System.out.println();
+
+        for (int l = this.numberOfBlocks - 1; l >= 0; l--) {
+            for (int t = 0; t < 3; t++) {
+                int disk = hanoiTower[t][l];
+
+                String diskStr = disk == 0 ? "|" : "=".repeat(disk * 2 - 1);
+                String line = center(diskStr, this.numberOfBlocks * 2 + 1);
+
+                System.out.print(line + space);
+            }
+            System.out.println();
+        }
+        for (int i = 1; i <= 3; i++) {
+            System.out.print(center(" " + i + " ", this.numberOfBlocks * 2 + 1) + space);
+        }
+        System.out.println("\n");
+    }
+
+    private String center(String text, int width) {
+        int padSize = (width - text.length()) / 2;
+        String padding = " ".repeat(Math.max(0, padSize));
+        return padding + text + padding;
+    }
 }
