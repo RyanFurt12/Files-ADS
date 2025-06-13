@@ -1,15 +1,10 @@
 public class BinaryTreeClass{
     public static void main(String[] args) {
-        BinaryTree bt = new BinaryTree(9);
+        BinaryTree bt = new BinaryTree();
 
-        bt.append(50);
-        bt.append(67);
-        bt.append(12);
-        bt.append(5);
-        bt.append(2);
-        bt.append(3);
-        bt.append(7);
-
+        int[] v = {50, 67, 12, 5, 2, 3, 7, 1};
+        for (int n : v) bt.append(n);
+        
         bt.print("preOrder");
         bt.print("Order");
         bt.print("posOrder");
@@ -50,20 +45,15 @@ class BinaryTreeNode {
     }
 
     public void append(BinaryTreeNode newNode){
-        if(newNode.value < this.value){
-            if(this.left == null){
-                this.left = newNode;
-                return;
-            }
-            this.left.append(newNode);
+        boolean goLeft = newNode.value < this.value;
+        BinaryTreeNode child = goLeft ? this.left : this.right; 
+
+        if(child == null){
+            if(goLeft) this.left = newNode;
+            else this.right = newNode;    
+            return;
         }
-        else{
-            if(this.right == null){
-                this.right = newNode;
-                return;
-            }
-            this.right.append(newNode);
-        }
+        child.append(newNode);
     }
 
     public void print(String type){
